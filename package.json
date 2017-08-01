@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "a ui component base on iview",
   "author": "windknow <songhlc@yonyou.com>",
-  "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
@@ -12,6 +11,10 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songhlc/ko-epui.git"
   },
   "dependencies": {
     "less": "^2.7.2",
