@@ -24,7 +24,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: 'ucloud.min.js'
+    filename: 'ucloud.js'
   },
   externals: {
     vue: {
@@ -39,15 +39,15 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      },
-      sourceMap: true
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   },
+    //   sourceMap: true
+    // }),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: 'ucloud.min.css'
+      filename: 'ucloud.css'
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
@@ -59,27 +59,27 @@ var webpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
-if (config.build.productionGzip) {
-  var CompressionWebpackPlugin = require('compression-webpack-plugin')
-
-  webpackConfig.plugins.push(
-    new CompressionWebpackPlugin({
-      asset: '[path].gz[query]',
-      algorithm: 'gzip',
-      test: new RegExp(
-        '\\.(' +
-        config.build.productionGzipExtensions.join('|') +
-        ')$'
-      ),
-      threshold: 10240,
-      minRatio: 0.8
-    })
-  )
-}
-
-if (config.build.bundleAnalyzerReport) {
-  var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-  webpackConfig.plugins.push(new BundleAnalyzerPlugin())
-}
+// if (config.build.productionGzip) {
+//   var CompressionWebpackPlugin = require('compression-webpack-plugin')
+//
+//   webpackConfig.plugins.push(
+//     new CompressionWebpackPlugin({
+//       asset: '[path].gz[query]',
+//       algorithm: 'gzip',
+//       test: new RegExp(
+//         '\\.(' +
+//         config.build.productionGzipExtensions.join('|') +
+//         ')$'
+//       ),
+//       threshold: 10240,
+//       minRatio: 0.8
+//     })
+//   )
+// }
+//
+// if (config.build.bundleAnalyzerReport) {
+//   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+//   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+// }
 
 module.exports = webpackConfig
