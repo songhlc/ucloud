@@ -1,9 +1,9 @@
 {
   "name": "ucloud",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "a ui component base on iview",
   "author": "windknow <songhlc@yonyou.com>",
-  "main": "dist/ucloud.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",

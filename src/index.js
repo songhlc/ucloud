@@ -1,10 +1,12 @@
 import box from './components/container/box.vue'
+import boxhead from './components/container/boxhead.vue'
 import boxcontent from './components/container/boxcontent.vue'
 import boxsticky from './components/boxsticky.vue'
 import spinner from './components/spinner.vue'
 
 const ucloud = {
   box,
+  boxhead,
   boxcontent,
   boxsticky,
   spinner
