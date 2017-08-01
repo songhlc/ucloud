@@ -1,3 +1,7 @@
+[![npm version](https://img.shields.io/npm/v/ucloud.svg)](https://www.npmjs.com/package/ucloud)
+[![license](https://img.shields.io/npm/l/ucloud.svg)](https://www.npmjs.com/package/ucloud)
+[![Build Status](https://api.travis-ci.org/songhlc/ucloud.png?branch=master)](https://api.travis-ci.org/songhlc/ucloud.png?branch=master)
+
 # ucloud
 
 > a ui component base on iview
