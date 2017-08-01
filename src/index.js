@@ -1,8 +1,8 @@
-import box from './components/container/box.vue'
-import boxhead from './components/container/boxhead.vue'
-import boxcontent from './components/container/boxcontent.vue'
-import boxsticky from './components/boxsticky.vue'
-import spinner from './components/spinner.vue'
+import box from './components/container/box'
+import boxhead from './components/container/boxhead'
+import boxcontent from './components/container/boxcontent'
+import boxsticky from './components/boxsticky'
+import spinner from './components/spinner'
 
 const ucloud = {
   box,
@@ -12,8 +12,8 @@ const ucloud = {
   spinner
 }
 
-const install = function (Vue, opts = {}) {
-  Object.keys(ucloud).forEach((key) => {
+const install = function (Vue) {
+  Object.keys(ucloud).forEach(function (key) {
     Vue.component(key, ucloud[key])
   })
 }
@@ -22,4 +22,7 @@ const install = function (Vue, opts = {}) {
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
-export default Object.assign(ucloud, {install})
+Object.assign(ucloud, {
+  install: install
+})
+export default ucloud

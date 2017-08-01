@@ -3,6 +3,11 @@
     <slot></slot>
   </div>
 </template>
+<script>
+  export default {
+    name: 'box'
+  }
+</script>
 <style>
   .ibox{
     padding: 12px 10px 20px;

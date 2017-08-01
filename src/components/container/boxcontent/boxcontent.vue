@@ -3,6 +3,11 @@
     <slot></slot>
   </div>
 </template>
+<script>
+  export default {
+    name: 'boxcontent'
+  }
+</script>
 <style>
   .box-content{
     color: inherit;

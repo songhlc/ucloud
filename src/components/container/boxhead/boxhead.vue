@@ -3,6 +3,11 @@
     <slot></slot>
   </div>
 </template>
+<script>
+  export default {
+    name: 'boxhead'
+  }
+</script>
 <style>
   .box-head{
     color: inherit;

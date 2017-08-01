@@ -13,6 +13,7 @@
 <script>
   var $ = window.$
   export default {
+    name: 'boxsticky',
     props: {
       title: String
     },

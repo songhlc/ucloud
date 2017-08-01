@@ -7,6 +7,11 @@
   </div>
 
 </template>
+<script>
+  export default {
+    name: 'spinner'
+  }
+</script>
 <style lang="less" scoped>
   div{
     margin: 0 auto;
