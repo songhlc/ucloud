@@ -69,18 +69,20 @@
           })
         }
         this.anchorlist.forEach(function (item) {
-          let pos = $(item).offset().top - $('body').scrollTop()
-          let heightDiff = pos - $(window).height() / 2
-          // 确保滚轮滚动时 会定位到相应的选项 增大第一个 的阈值 当滚动条小于10则认为到了最顶部
-          if (heightDiff < 50 && heightDiff >= -200) {
-            if (!($('.sticky-anchor[href="' + item + '"]').hasClass('active'))) {
-              $('.sticky-anchor').removeClass('active')
-              $('.sticky-anchor[href="' + item + '"]').addClass('active')
+          if ($(item).length > 0) {
+            let pos = $(item).offset().top - $('body').scrollTop()
+            let heightDiff = pos - $(window).height() / 2
+            // 确保滚轮滚动时 会定位到相应的选项 增大第一个 的阈值 当滚动条小于10则认为到了最顶部
+            if (heightDiff < 50 && heightDiff >= -200) {
+              if (!($('.sticky-anchor[href="' + item + '"]').hasClass('active'))) {
+                $('.sticky-anchor').removeClass('active')
+                $('.sticky-anchor[href="' + item + '"]').addClass('active')
+              }
             }
-          }
-          if ($('body').scrollTop() < 10) {
-            $('.sticky-anchor').removeClass('active')
-            $('.sticky-anchor').eq(0).addClass('active')
+            if ($('body').scrollTop() < 10) {
+              $('.sticky-anchor').removeClass('active')
+              $('.sticky-anchor').eq(0).addClass('active')
+            }
           }
         })
         var o = this.o
