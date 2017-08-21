@@ -10,7 +10,7 @@
 </script>
 <style>
   .ibox{
-    padding: 12px 10px 20px;
+    padding: 12px 10px 20px 15px;
     clear: both;
     margin-bottom: 25px;
     margin-top: 0;

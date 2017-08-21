@@ -1,6 +1,6 @@
 {
   "name": "ucloud",
-  "version": "1.0.11",
+  "version": "1.0.14",
   "description": "a ui component base on iview",
   "author": "windknow <songhlc@yonyou.com>",
   "main": "src/index.js",

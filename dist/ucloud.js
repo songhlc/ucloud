@@ -518,18 +518,20 @@ var $ = window.$;
         });
       }
       this.anchorlist.forEach(function (item) {
-        var pos = $(item).offset().top - $('body').scrollTop();
-        var heightDiff = pos - $(window).height() / 2;
-        // 确保滚轮滚动时 会定位到相应的选项 增大第一个 的阈值 当滚动条小于10则认为到了最顶部
-        if (heightDiff < 50 && heightDiff >= -200) {
-          if (!$('.sticky-anchor[href="' + item + '"]').hasClass('active')) {
-            $('.sticky-anchor').removeClass('active');
-            $('.sticky-anchor[href="' + item + '"]').addClass('active');
+        if ($(item).length > 0) {
+          var pos = $(item).offset().top - $('body').scrollTop();
+          var heightDiff = pos - $(window).height() / 2;
+          // 确保滚轮滚动时 会定位到相应的选项 增大第一个 的阈值 当滚动条小于10则认为到了最顶部
+          if (heightDiff < 50 && heightDiff >= -200) {
+            if (!$('.sticky-anchor[href="' + item + '"]').hasClass('active')) {
+              $('.sticky-anchor').removeClass('active');
+              $('.sticky-anchor[href="' + item + '"]').addClass('active');
+            }
           }
-        }
-        if ($('body').scrollTop() < 10) {
-          $('.sticky-anchor').removeClass('active');
-          $('.sticky-anchor').eq(0).addClass('active');
+          if ($('body').scrollTop() < 10) {
+            $('.sticky-anchor').removeClass('active');
+            $('.sticky-anchor').eq(0).addClass('active');
+          }
         }
       });
       var o = this.o;
@@ -613,9 +615,16 @@ var $ = window.$;
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'boxcontent'
+  name: 'boxcontent',
+  props: {
+    label: {
+      type: String,
+      default: ''
+    }
+  }
 });
 
 /***/ }),
@@ -1211,7 +1220,9 @@ var Component = normalizeComponent(
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "box-content"
-  }, [_vm._t("default")], 2)
+  }, [_c('div', {
+    staticClass: "box-content-title"
+  }, [_vm._v(_vm._s(_vm.label))]), _vm._v(" "), _vm._t("default")], 2)
 }
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
